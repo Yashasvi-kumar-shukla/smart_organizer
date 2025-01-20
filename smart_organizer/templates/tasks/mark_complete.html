@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mark Complete</title>
+    <link rel="stylesheet" href="/static/mc.css">
+</head>
+<body>
+    <h1>Mark Tasks as Complete</h1>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <input type="checkbox" name="task_ids" value="{{ task.id }}">
+                {{ task.title }} | {{ task.deadline }} | {{ task.priority }}
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Mark as Complete</button>
+    </form>
+</body>
+</html>

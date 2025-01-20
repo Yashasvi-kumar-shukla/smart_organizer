@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Display Tasks</title>
+    <link rel="stylesheet" href="/static/dt.css">
+</head>
+<body>
+    <h1>All Tasks</h1>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task.title }} | {{ task.deadline }} | {{ task.priority }} | 
+            {% if task.is_complete %} Complete {% else %} Pending {% endif %}
+            {% if task.deadline <= current_time %}
+                {% if task.deadline.time < current_time.time %}<script>
+                    alert("Task {{ task.title }} is overdue!");
+                </script>{% endif %}{% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

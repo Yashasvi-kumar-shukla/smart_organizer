@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/pf.css">
+</head>
+<body>
+    <h1>Welcome to Smart Organizer</h1>
+    <ul>
+        <li><a href="{% url 'display_tasks' %}">Display Tasks</a></li>
+        <li><a href="{% url 'add_task' %}">Add New Task</a></li>
+        <li><a href="{% url 'mark_complete' %}">Mark Tasks as Complete</a></li>
+    </ul>
+</body>
+</html>
